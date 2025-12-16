@@ -11,31 +11,39 @@ const StatisticLine = ({ text, value }) => {
   );
 };
 const Statistics = ({ bad, good, neutral, total }) => {
+  const average = (bad * -1 + good) / total;
+  const positive = (good / total) * 100 + "%";
   if (total === 0) {
     return <p>No feedback given</p>;
   }
   return (
     <>
       <h1>Statistics</h1>
-
-      <StatisticLine text="good" value={good}></StatisticLine>
-      <StatisticLine text="neutral" value={neutral}></StatisticLine>
-      <StatisticLine text="bad" value={bad}></StatisticLine>
-      <StatisticLine text="all" value={total}></StatisticLine>
-      <Average bad={bad} good={good} total={total}></Average>
-      <Positive good={good} total={total}></Positive>
+      <table style={{ textAlign: "left" }}>
+        <tbody>
+          <tr>
+            <th scope="row">good</th>
+            <td>{good}</td>
+          </tr>
+          <tr>
+            <th scope="row">neutral</th>
+            <td>{neutral}</td>
+          </tr>
+          <tr>
+            <th scope="row">bad</th>
+            <td>{bad}</td>
+          </tr>
+          <tr>
+            <th scope="row">average</th>
+            <td>{average}</td>
+          </tr>
+          <tr>
+            <th scope="row">positive</th>
+            <td>{positive}</td>
+          </tr>
+        </tbody>
+      </table>
     </>
-  );
-};
-
-const Average = ({ bad, good, total }) => {
-  const average = (bad * -1 + good) / total;
-  return <StatisticLine text="average" value={average}></StatisticLine>;
-};
-const Positive = ({ good, total }) => {
-  const percentageOfPositive = (good / total) * 100 + "%";
-  return (
-    <StatisticLine text="positive" value={percentageOfPositive}></StatisticLine>
   );
 };
 
@@ -51,7 +59,12 @@ const App = () => {
       <Button text="good" onClick={() => setGood(good + 1)}></Button>
       <Button text="neutral" onClick={() => setNeutral(neutral + 1)}></Button>
       <Button text="bad" onClick={() => setBad(bad + 1)}></Button>
-      <Statistics bad={bad} good={good} total={total}></Statistics>
+      <Statistics
+        bad={bad}
+        good={good}
+        neutral={neutral}
+        total={total}
+      ></Statistics>
     </>
   );
 };
