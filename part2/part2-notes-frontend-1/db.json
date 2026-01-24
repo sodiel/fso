@@ -1,0 +1,39 @@
+{
+  "persons": [
+    {
+      "id": "7207",
+      "name": "a",
+      "number": "2323"
+    },
+    {
+      "id": "8ad4",
+      "name": "artem",
+      "number": "12"
+    },
+    {
+      "id": "5670",
+      "name": "aa",
+      "number": "2"
+    },
+    {
+      "id": "44bc",
+      "name": "фвафыв",
+      "number": "ф"
+    },
+    {
+      "id": "a80b",
+      "name": "grigori",
+      "number": "a"
+    },
+    {
+      "id": "c4f3",
+      "name": "Anatoly",
+      "number": "8 800 234 23 23"
+    },
+    {
+      "id": "5509",
+      "name": "qwe",
+      "number": "33"
+    }
+  ]
+}

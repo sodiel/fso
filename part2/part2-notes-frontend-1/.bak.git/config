@@ -1,0 +1,12 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/fullstack-hy2020/part2-notes-frontend.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "part2-1"]
+	remote = origin
+	merge = refs/heads/part2-1
+	vscode-merge-base = origin/part2-1
